@@ -2,7 +2,7 @@
 // Common Utility Functions
 // ----------------------------
 function addToCart(productId){
-    fetch(`http://127.0.0.1:8000/api/cart/add/${productId}/`, {
+    fetch(`https://ecommerce-website-backend-1-rjus.onrender.com${productId}/`, {
         method: "POST",
         headers: {"Content-Type": "application/json"}
     })
@@ -16,7 +16,7 @@ function addToCart(productId){
 
 function updateCartCount(){
     // Optionally, show cart count in navbar
-    fetch("http://127.0.0.1:8000/api/cart/my_cart/")
+    fetch("https://ecommerce-website-backend-1-rjus.onrender.com")
     .then(res => res.json())
     .then(items => {
         const cartLinks = document.querySelectorAll(".bi-cart");
@@ -247,3 +247,4 @@ document.addEventListener("DOMContentLoaded", () => {
     handleCheckout();
     updateCartCount();
 });
+
